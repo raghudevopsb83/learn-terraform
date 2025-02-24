@@ -10,6 +10,14 @@ variable "x" {
   default = 10
 }
 
+# List variable
+
+variable "y" {
+  default = [ 1, "abc", 0.3, false]
+}
+# list can have a combination of types also
+
+
 
 
 
@@ -22,3 +30,10 @@ output "x" {
 output "x1" {
   value = "Value of x - ${var.x}"
 }
+
+output "y1" {
+  value = var.y[0]
+}
+
+
+
