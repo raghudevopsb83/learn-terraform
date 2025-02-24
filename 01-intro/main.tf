@@ -17,6 +17,12 @@ variable "y" {
 }
 # list can have a combination of types also
 
+variable "z" {
+  default = {
+    name = "JOhn"
+    age = 20
+  }
+}
 
 
 
@@ -35,5 +41,7 @@ output "y1" {
   value = var.y[0]
 }
 
-
+output "z" {
+  value = "Name - ${var.z["name"]}, Age - ${var.z.age}"
+}
 
