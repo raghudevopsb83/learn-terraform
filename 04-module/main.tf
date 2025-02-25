@@ -5,6 +5,6 @@ module "null-resources" {
 
 module "resource-count" {
   source = "./resource-count"
-  input = module.null-resources
+  input = module.null-resources.resources
 }
 
