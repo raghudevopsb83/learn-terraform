@@ -11,7 +11,7 @@ data "vault_kv_secret" "secret_data" {
 
 resource "local_file" "test" {
   filename = "/tmp/1"
-  content = data.vault_kv_secret.secret_data.data
+  content = data.vault_kv_secret.secret_data.data["username"]
 }
 
 
