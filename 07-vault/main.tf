@@ -5,13 +5,13 @@ provider "vault" {
 
 variable "vault_token" {}
 
-data "vault_kv_secret" "secret_data" {
-  path = "test/data/demo"
+data "vault_generic_secret" "secret_data" {
+  path = "test/demo"
 }
 
 resource "local_file" "test" {
   filename = "/tmp/1"
-  content = data.vault_kv_secret.secret_data.data["username"]
+  content = data.vault_generic_secret.secret_data.data["username"]
 }
 
 
